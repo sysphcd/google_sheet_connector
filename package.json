@@ -1,0 +1,18 @@
+{
+  "name": "google-sheet-connector",
+  "version": "1.0.0",
+  "description": "A connector between Google Sheets and Email notification using Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "googleapis": "^144.0.0",
+    "nodemailer": "^6.10.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

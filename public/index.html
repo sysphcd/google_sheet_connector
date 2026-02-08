@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets Email Connector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <header>
+            <div class="header-main">
+                <div class="logo">
+                    <span class="bolt">⚡</span> G-SHEETS <span class="highlight">CONNECTOR</span>
+                </div>
+                <div class="sub-logo">自動化郵件回覆系統 // 數據監控中心</div>
+            </div>
+            <div class="header-actions">
+                <button id="refreshBtn" class="btn secondary">搜尋 / 重新整理</button>
+                <button id="executeBtn" class="btn primary">執行自動回覆</button>
+            </div>
+        </header>
+
+        <div id="status" class="status-msg hidden"></div>
+
+        <section class="stats-grid">
+            <div class="card glass">
+                <div class="stat-label">總使用者</div>
+                <div id="totalUsers" class="stat-value">0</div>
+            </div>
+            <div class="card glass">
+                <div class="stat-label">待處理</div>
+                <div id="pendingUsers" class="stat-value warning">0</div>
+            </div>
+            <div class="card glass">
+                <div class="stat-label">已回覆</div>
+                <div id="repliedUsers" class="stat-value success">0</div>
+            </div>
+        </section>
+
+        <section class="charts-grid">
+            <div class="card glass chart-card">
+                <h3>回覆狀態分佈</h3>
+                <div class="chart-container">
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+            <div class="card glass chart-card">
+                <h3>每日新增使用者</h3>
+                <div class="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <div class="card glass">
+                <h3>詳細資料列表</h3>
+                <div class="table-container">
+                    <table id="dataTable">
+                        <thead>
+                            <tr id="tableHead"></tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
